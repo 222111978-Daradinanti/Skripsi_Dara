@@ -13,14 +13,16 @@
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <style>
         #map {
-            width: 1011px;
-            height: 627px;
+            width: 2000px;
+            height: 550px;
+            border-radius: 12px;
         }
         </style>
         <title></title>
     </head>
     <body>
-        <div id="map">
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <div id="map"></div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
@@ -123,12 +125,12 @@
                 mouseover: highlightFeature,
             });
             var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">nmkab</th>\
+                <tr>\
+                        <th scope="row">Kabupaten/Kota</th>\
                         <td class="visible-with-data" id="nmkab">' + (feature.properties['nmkab'] !== null ? autolinker.link(String(feature.properties['nmkab']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">LST - FCM</th>\
+                        <th scope="row">Klaster (LST)</th>\
                         <td class="visible-with-data" id="LST - FCM">' + (feature.properties['LST - FCM'] !== null ? autolinker.link(String(feature.properties['LST - FCM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';

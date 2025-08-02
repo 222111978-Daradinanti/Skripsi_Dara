@@ -13,14 +13,17 @@
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <style>
         #map {
-            width: 1011px;
-            height: 627px;
-        }
+            width: 2000px;
+            height: 550px;
+           
+            border-radius: 12px;
+            }
         </style>
         <title></title>
     </head>
     <body>
-        <div id="map">
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <div id="map"></div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
@@ -124,12 +127,12 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">nmkab</th>\
+                        <th scope="row">Kabupaten/Kota</th>\
                         <td class="visible-with-data" id="nmkab">' + (feature.properties['nmkab'] !== null ? autolinker.link(String(feature.properties['nmkab']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">LST - FCM</th>\
-                        <td class="visible-with-data" id="LST - FCM">' + (feature.properties['LST - FCM'] !== null ? autolinker.link(String(feature.properties['LST - FCM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Klaster (Hirarki)</th>\
+                        <td class="visible-with-data" id="LST - HIRARKI">' + (feature.properties['LST - HIRARKI'] !== null ? autolinker.link(String(feature.properties['LST - HIRARKI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -140,7 +143,7 @@
         }
 
         function style_FCM_1_0(feature) {
-            if (feature.properties['LST - FCM'] >= 1.000000 && feature.properties['LST - FCM'] <= 1.900000 ) {
+            if (feature.properties['LST - HIRARKI'] >= 1.000000 && feature.properties['LST - HIRARKI'] <= 1.900000 ) {
                 return {
                 pane: 'pane_FCM_1',
                 opacity: 1,
@@ -155,7 +158,7 @@
                 interactive: true,
             }
             }
-            if (feature.properties['LST - FCM'] >= 1.900000 && feature.properties['LST - FCM'] <= 2.500000 ) {
+            if (feature.properties['LST - HIRARKI'] >= 1.900000 && feature.properties['LST - HIRARKI'] <= 2.500000 ) {
                 return {
                 pane: 'pane_FCM_1',
                 opacity: 1,
@@ -170,7 +173,7 @@
                 interactive: true,
             }
             }
-            if (feature.properties['LST - FCM'] >= 2.500000 && feature.properties['LST - FCM'] <= 3.000000 ) {
+            if (feature.properties['LST - HIRARKI'] >= 2.500000 && feature.properties['LST - HIRARKI'] <= 3.000000 ) {
                 return {
                 pane: 'pane_FCM_1',
                 opacity: 1,

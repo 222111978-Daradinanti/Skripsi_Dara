@@ -13,14 +13,17 @@
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <style>
         #map {
-            width: 1011px;
-            height: 627px;
-        }
+            width: 2000px;
+            height: 550px;
+           
+            border-radius: 12px;
+            }
         </style>
         <title></title>
     </head>
     <body>
-        <div id="map">
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <div id="map"></div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
@@ -124,62 +127,16 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['gid'] !== null ? autolinker.link(String(feature.properties['gid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Kabupaten/Kota</th>\
+                        <td class="visible-with-data" id="nmkab">' + (feature.properties['nmkab'] !== null ? autolinker.link(String(feature.properties['nmkab']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['kdprov'] !== null ? autolinker.link(String(feature.properties['kdprov']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Klasifikasi SUHII</th>\
+                        <td class="visible-with-data" id="Klasifikasi UHI">' + (feature.properties['Klasifikasi UHI'] !== null ? autolinker.link(String(feature.properties['Klasifikasi UHI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['nmprov'] !== null ? autolinker.link(String(feature.properties['nmprov']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['nmkab'] !== null ? autolinker.link(String(feature.properties['nmkab']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Longitude'] !== null ? autolinker.link(String(feature.properties['Longitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Latitude'] !== null ? autolinker.link(String(feature.properties['Latitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X1'] !== null ? autolinker.link(String(feature.properties['X1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X2'] !== null ? autolinker.link(String(feature.properties['X2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X3'] !== null ? autolinker.link(String(feature.properties['X3']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X4'] !== null ? autolinker.link(String(feature.properties['X4']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X5'] !== null ? autolinker.link(String(feature.properties['X5']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X6'] !== null ? autolinker.link(String(feature.properties['X6']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X7'] !== null ? autolinker.link(String(feature.properties['X7']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X8'] !== null ? autolinker.link(String(feature.properties['X8']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X9'] !== null ? autolinker.link(String(feature.properties['X9']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Nilai UHI'] !== null ? autolinker.link(String(feature.properties['Nilai UHI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Klasifikasi UHI'] !== null ? autolinker.link(String(feature.properties['Klasifikasi UHI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Klaster UHI</th>\
+                        <th scope="row">Klaster SUHII</th>\
                         <td class="visible-with-data" id="Klaster UHI">' + (feature.properties['Klaster UHI'] !== null ? autolinker.link(String(feature.properties['Klaster UHI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LST - FCM'] !== null ? autolinker.link(String(feature.properties['LST - FCM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);

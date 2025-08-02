@@ -121,16 +121,16 @@
                         <tr><td>Pandeglang</td><td>Banten</td><td>0,1075</td></tr>
                         <tr><td>Serang</td><td>Banten</td><td>1,1623</td></tr>
                         <tr><td>Tangerang</td><td>Banten</td><td>1,7197</td></tr>
-                        <tr><td>Bantul</td><td>Di Yogyakarta</td><td>-0,5245</td></tr>
-                        <tr><td>Gunungkidul</td><td>Di Yogyakarta</td><td>0,8803</td></tr>
-                        <tr><td>Kota Yogyakarta</td><td>Di Yogyakarta</td><td>7,7189</td></tr>
-                        <tr><td>Kulon Progo</td><td>Di Yogyakarta</td><td>0,4598</td></tr>
-                        <tr><td>Sleman</td><td>Di Yogyakarta</td><td>3,6965</td></tr>
-                        <tr><td>Jakarta Barat</td><td>Dki Jakarta</td><td>1,1804</td></tr>
-                        <tr><td>Jakarta Pusat</td><td>Dki Jakarta</td><td>2,2689</td></tr>
-                        <tr><td>Jakarta Selatan</td><td>Dki Jakarta</td><td>0,9847</td></tr>
-                        <tr><td>Jakarta Timur</td><td>Dki Jakarta</td><td>3,3155</td></tr>
-                        <tr><td>Jakarta Utara</td><td>Dki Jakarta</td><td>0,7129</td></tr>
+                        <tr><td>Bantul</td><td>DI Yogyakarta</td><td>-0,5245</td></tr>
+                        <tr><td>Gunungkidul</td><td>DI Yogyakarta</td><td>0,8803</td></tr>
+                        <tr><td>Kota Yogyakarta</td><td>DI Yogyakarta</td><td>7,7189</td></tr>
+                        <tr><td>Kulon Progo</td><td>DI Yogyakarta</td><td>0,4598</td></tr>
+                        <tr><td>Sleman</td><td>DI Yogyakarta</td><td>3,6965</td></tr>
+                        <tr><td>Jakarta Barat</td><td>DKI Jakarta</td><td>1,1804</td></tr>
+                        <tr><td>Jakarta Pusat</td><td>DKI Jakarta</td><td>2,2689</td></tr>
+                        <tr><td>Jakarta Selatan</td><td>DKI Jakarta</td><td>0,9847</td></tr>
+                        <tr><td>Jakarta Timur</td><td>DKI Jakarta</td><td>3,3155</td></tr>
+                        <tr><td>Jakarta Utara</td><td>DKI Jakarta</td><td>0,7129</td></tr>
                         <tr><td>Bandung</td><td>Jawa Barat</td><td>3,3375</td></tr>
                         <tr><td>Bandung Barat</td><td>Jawa Barat</td><td>0,7049</td></tr>
                         <tr><td>Bekasi</td><td>Jawa Barat</td><td>2,2573</td></tr>
@@ -242,8 +242,8 @@
 
         <!-- Peta Klasifikasi SUHI -->
         <h3 style="margin-top: 30px; margin-bottom: 30px; font-size: 22px;">Peta Klasifikasi Surface Urban Heat Island Intensity</h3>
-        <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-            <iframe src="Peta/qgis2web_2025_07_31-17_43_58_702294/index.html" width="80%%" height="500px" style="border: 2px solid #ccc; border-radius: 12px;"></iframe>
+        <div style="display: flex; justify-content: center; margin-bottom: 40px; ">
+            <iframe src="Peta/qgis2web_2025_07_31-17_43_58_702294/index.html" width="80%%" height="570px" style="border: 2px solid #ccc; border-radius: 12px;"></iframe>
         </div>
 
         <br><hr><br>
@@ -258,7 +258,7 @@
 
         <!-- Iframe untuk peta clustering -->
         <div id="mapContainer" style="display: flex; justify-content: center; align-items: center;">
-            <iframe id="mapFrame" src="Peta/qgis2web_2025_FCM/index.html" width="80%" height="500px" style="border: 2px solid #ccc; border-radius: 12px;"></iframe>
+            <iframe id="mapFrame" src="Peta/qgis2web_2025_FCM/index.html" width="80%" height="570px" style="border: 2px solid #ccc; border-radius: 12px;"></iframe>
         </div>
 
         <br><hr><br>
@@ -459,7 +459,8 @@
                         }
                     },
                     y: {
-                        beginAtZero: true,
+                        // beginAtZero: true,
+                        min:0.5,
                         max: 1
                     }
                 }
